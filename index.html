@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="smooth">
+<head>
+  <script>document.documentElement.classList.add('js');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flora com 25% de desconto — Guia de instalação | IA de Primeira</title>
+  <meta name="description" content="Passo a passo para criar sua conta no Flora com 25% de desconto pela parceria IA de Primeira. Leia antes de criar sua conta.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon-32.png" type="image/png">
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/dmserif-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+  /* ============================================================
+     Flora × IA de Primeira — Guia de desconto
+     Design system METRIK (teal #0F766E, Inter + DM Serif)
+     ============================================================ */
+
+  @font-face{
+    font-family:'Inter';font-style:normal;font-weight:300 700;font-display:swap;
+    src:url('fonts/inter-latin.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+  @font-face{
+    font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;
+    src:url('fonts/dmserif-latin.woff2') format('woff2');
+    unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+  }
+
+  :root{
+    --black:#1E1E1E; --gr:#3D3D3A; --g7:#5F5E5A; --g5:#888780;
+    --g3:#B4B2A9; --g1:#D3D1C7; --off:#F5F4F0; --white:#FFFFFF;
+    --cta:#0F766E; --cta-h:#0D6B63; --teal-lite:#2DD4BF;
+    --warn:#B45309; --warn-bg:#FEF6E7; --warn-br:#F5D9A6;
+    --ok:#0F766E;
+    --maxw:760px;
+    --ease:cubic-bezier(.16,1,.3,1);
+    /* semantic z-scale */
+    --z-nav:50; --z-content:10;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+  html.smooth{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:'Inter',system-ui,sans-serif;
+    background:var(--off);color:var(--gr);
+    font-size:16px;line-height:1.7;font-weight:400;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  img{display:block;max-width:100%;height:auto}
+  a{color:var(--cta);text-decoration:none}
+  h1,h2,h3,p{margin:0}
+  h1,h2,h3{color:var(--black);text-wrap:balance;letter-spacing:-.02em}
+  ::selection{background:rgba(15,118,110,.16)}
+
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .sec{padding:44px 0}
+  @media(min-width:640px){.sec{padding:64px 0}}
+
+  /* ---- sticky nav ---- */
+  .nav{
+    position:fixed;inset:0 0 auto 0;z-index:var(--z-nav);
+    display:flex;align-items:center;justify-content:space-between;
+    padding:12px 22px;background:rgba(245,244,240,.82);
+    backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid transparent;
+    transform:translateY(-100%);transition:transform .38s var(--ease),border-color .38s var(--ease);
+  }
+  .nav.vis{transform:none;border-color:rgba(30,30,30,.08)}
+  .nav .brand{font-size:13px;font-weight:600;color:var(--black);letter-spacing:-.01em}
+  .nav .brand span{color:var(--g5);font-weight:500}
+  .nav a.cta-mini{
+    font-size:13px;font-weight:600;color:#fff;background:var(--cta);
+    padding:8px 16px;border-radius:999px;transition:background .2s;
+  }
+  .nav a.cta-mini:hover{background:var(--cta-h)}
+
+  /* ---- hero ---- */
+  .hero{position:relative;overflow:hidden;padding-top:104px;padding-bottom:8px}
+  .hero .lockup{
+    display:inline-flex;align-items:center;gap:10px;
+    font-size:12px;font-weight:600;letter-spacing:.02em;color:var(--g7);
+    background:var(--white);border:1px solid var(--g1);
+    padding:7px 14px;border-radius:999px;margin-bottom:24px;
+  }
+  .hero .lockup b{color:var(--black)}
+  .hero .lockup .x{color:var(--g3);font-weight:400}
+  .hero .dot{width:6px;height:6px;border-radius:999px;background:var(--cta)}
+  .hero h1{
+    font-size:clamp(30px,6.2vw,52px);line-height:1.06;font-weight:700;
+    letter-spacing:-.03em;margin-bottom:18px;
+  }
+  .hero h1 em{font-family:'DM Serif Display',Georgia,serif;font-style:italic;font-weight:400;color:var(--cta)}
+  .hero .sub{font-size:clamp(16px,2.2vw,18px);color:var(--g7);max-width:56ch;line-height:1.6}
+  .hero .orb{
+    position:absolute;border-radius:999px;filter:blur(60px);z-index:-1;pointer-events:none;
+  }
+  .hero .orb.a{width:340px;height:340px;background:rgba(15,118,110,.10);top:-120px;right:-90px}
+  .hero .orb.b{width:260px;height:260px;background:rgba(45,212,191,.08);bottom:-140px;left:-80px}
+
+  /* ---- generic reveal ---- */
+  html.js [data-r]{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  html.js [data-r].is{opacity:1;transform:none}
+
+  /* ---- callout ---- */
+  .callout{
+    background:var(--white);border:1px solid var(--g1);border-radius:18px;
+    padding:22px 22px 22px 22px;box-shadow:0 12px 40px rgba(30,30,30,.05);
+  }
+  .callout.warn{background:var(--warn-bg);border-color:var(--warn-br)}
+  .callout .ctop{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+  .callout .ic{
+    flex:0 0 auto;width:30px;height:30px;border-radius:999px;display:grid;place-items:center;
+    background:rgba(15,118,110,.10);color:var(--cta);
+  }
+  .callout.warn .ic{background:rgba(180,83,9,.12);color:var(--warn)}
+  .callout .ctitle{font-size:14px;font-weight:700;color:var(--black);letter-spacing:-.01em}
+  .callout.warn .ctitle{color:var(--warn)}
+  .callout p{font-size:15px;line-height:1.62;color:var(--g7)}
+  .callout p + p{margin-top:12px}
+  .callout strong{color:var(--black);font-weight:600}
+  .callout.warn strong{color:#7c3a06}
+
+  /* ---- section heading ---- */
+  .shead{margin-bottom:26px}
+  .shead h2{font-size:clamp(23px,3.6vw,32px);line-height:1.12;font-weight:700;margin-bottom:8px}
+  .shead p{font-size:15px;color:var(--g7);line-height:1.6;max-width:60ch}
+
+  /* ---- steps timeline ---- */
+  .steps{position:relative;display:flex;flex-direction:column;gap:0}
+  .step{position:relative;padding:0 0 30px 58px}
+  .step:last-child{padding-bottom:0}
+  .step::before{ /* vertical line */
+    content:"";position:absolute;left:18px;top:38px;bottom:-4px;width:2px;
+    background:linear-gradient(var(--g1),rgba(211,209,199,.25));
+  }
+  .step:last-child::before{display:none}
+  .step .snum{
+    position:absolute;left:0;top:0;width:38px;height:38px;border-radius:999px;
+    display:grid;place-items:center;font-weight:700;font-size:15px;color:#fff;
+    background:var(--cta);box-shadow:0 4px 14px rgba(15,118,110,.28);
+  }
+  .step .slabel{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--cta);margin-bottom:5px}
+  .step h3{font-size:19px;font-weight:700;margin-bottom:8px}
+  .step p{font-size:15px;color:var(--g7);line-height:1.62}
+  .step p + p{margin-top:8px}
+  .step ol{margin:10px 0 0;padding:0;counter-reset:mini;list-style:none;display:flex;flex-direction:column;gap:8px}
+  .step ol li{position:relative;padding-left:26px;font-size:15px;color:var(--g7)}
+  .step ol li::before{
+    counter-increment:mini;content:counter(mini);position:absolute;left:0;top:1px;
+    width:18px;height:18px;border-radius:999px;background:rgba(15,118,110,.10);color:var(--cta);
+    font-size:11px;font-weight:700;display:grid;place-items:center;
+  }
+  .step .gear{
+    display:inline-flex;align-items:center;gap:7px;vertical-align:middle;
+    background:var(--white);border:1px solid var(--g1);border-radius:8px;
+    padding:3px 9px;font-size:13px;font-weight:600;color:var(--black);
+  }
+
+  /* ---- CTA buttons ---- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    font-size:15px;font-weight:600;color:#fff;background:var(--cta);
+    padding:14px 26px;border-radius:999px;
+    box-shadow:0 10px 24px rgba(15,118,110,.24);
+    transition:background .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease);
+  }
+  .btn:hover{background:var(--cta-h);transform:translateY(-1px);box-shadow:0 14px 30px rgba(15,118,110,.30)}
+  .btn:active{transform:translateY(0) scale(.99)}
+  .btn svg{width:17px;height:17px}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;
+    color:var(--cta);padding:6px 2px;
+  }
+  .btn-ghost:hover{color:var(--cta-h)}
+
+  /* ---- discount equation ---- */
+  .eq{
+    display:flex;align-items:stretch;gap:12px;flex-wrap:wrap;
+    background:var(--black);border-radius:20px;padding:26px 24px;color:#fff;
+  }
+  .eq .cell{flex:1 1 120px;text-align:center;padding:10px 6px}
+  .eq .cell .k{font-size:clamp(26px,6vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1;color:#fff}
+  .eq .cell.big .k{color:var(--teal-lite)}
+  .eq .cell .v{font-size:12px;color:rgba(255,255,255,.62);margin-top:8px;line-height:1.4}
+  .eq .op{display:grid;place-items:center;font-size:22px;font-weight:400;color:rgba(255,255,255,.4);flex:0 0 auto;width:14px}
+  @media(max-width:520px){
+    .eq{flex-direction:column;gap:4px}
+    .eq .op{width:100%;height:20px}
+    .eq .cell{display:flex;align-items:baseline;justify-content:center;gap:10px}
+    .eq .cell .v{margin-top:0}
+  }
+
+  /* ---- price cards ---- */
+  .prices{display:grid;grid-template-columns:1fr;gap:16px}
+  @media(min-width:640px){.prices{grid-template-columns:1fr 1fr}}
+  .pcard{
+    background:var(--white);border:1px solid var(--g1);border-radius:18px;padding:24px;
+    position:relative;transition:border-color .25s,box-shadow .25s,transform .25s;
+  }
+  .pcard:hover{border-color:rgba(15,118,110,.3);box-shadow:0 16px 44px rgba(30,30,30,.08);transform:translateY(-2px)}
+  .pcard .pname{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--cta);margin-bottom:2px}
+  .pcard .pfor{font-size:13px;color:var(--g5);margin-bottom:16px}
+  .pcard .old{font-size:15px;color:var(--g5);text-decoration:line-through}
+  .pcard .new{font-size:34px;font-weight:700;color:var(--black);letter-spacing:-.03em;line-height:1;margin:2px 0}
+  .pcard .new small{font-size:15px;font-weight:500;color:var(--g5)}
+  .pcard .brl{display:inline-block;margin-top:12px;font-size:13px;font-weight:600;color:var(--cta);background:rgba(15,118,110,.08);padding:5px 12px;border-radius:999px}
+  .pcard .save{position:absolute;top:18px;right:18px;font-size:11px;font-weight:700;color:#fff;background:var(--cta);padding:4px 10px;border-radius:999px}
+
+  /* ---- checkout receipt mock ---- */
+  .receipt{
+    background:var(--white);border:1px solid var(--g1);border-radius:18px;overflow:hidden;
+    box-shadow:0 18px 50px rgba(30,30,30,.08);max-width:420px;margin:0 auto;
+  }
+  .receipt .rhead{padding:20px 22px 16px;border-bottom:1px solid var(--off)}
+  .receipt .rbrand{font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--black);text-transform:uppercase;margin-bottom:14px}
+  .receipt .rtitle{font-size:14px;color:var(--g7)}
+  .receipt .rbig{font-size:30px;font-weight:700;color:var(--black);letter-spacing:-.02em;margin-top:2px}
+  .receipt .rnote{font-size:12px;color:var(--g5);margin-top:4px}
+  .receipt .rbody{padding:16px 22px 20px}
+  .receipt .row{display:flex;justify-content:space-between;align-items:center;font-size:14px;padding:7px 0;color:var(--g7)}
+  .receipt .row.disc{color:var(--cta);font-weight:600}
+  .receipt .tag{display:inline-flex;align-items:center;gap:6px;background:rgba(15,118,110,.10);color:var(--cta);font-size:12px;font-weight:700;padding:3px 9px;border-radius:7px}
+  .receipt .row.total{border-top:1px solid var(--off);margin-top:6px;padding-top:14px;font-size:16px;font-weight:700;color:var(--black)}
+  .receipt .strike{color:var(--g5);text-decoration:line-through;font-size:13px}
+
+  /* ---- figure / annotation ---- */
+  .anno{
+    display:flex;gap:14px;align-items:flex-start;background:var(--white);
+    border:1px solid var(--g1);border-radius:14px;padding:16px 18px;
+  }
+  .anno .agear{
+    flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
+    background:var(--off);border:1px solid var(--g1);color:var(--gr);
+  }
+  .anno .atxt{font-size:14px;color:var(--g7);line-height:1.55}
+  .anno .atxt b{color:var(--black);font-weight:600}
+
+  /* ---- figure (real screenshots) ---- */
+  .figure{margin:16px 0 0}
+  .frame{
+    border-radius:16px;overflow:hidden;border:1px solid var(--g1);
+    background:var(--white);box-shadow:0 18px 50px rgba(30,30,30,.10);
+  }
+  .frame .bar{
+    display:flex;align-items:center;gap:6px;padding:10px 14px;
+    background:var(--off);border-bottom:1px solid var(--g1);
+  }
+  .frame .bar i{width:10px;height:10px;border-radius:999px;background:var(--g3);display:block}
+  .frame .bar i:nth-child(1){background:#E4A7A0}
+  .frame .bar i:nth-child(2){background:#E6CE9A}
+  .frame .bar i:nth-child(3){background:#A9CBA6}
+  .frame .bar .u{margin-left:10px;font-size:11px;color:var(--g5);font-weight:500}
+  .frame img{width:100%;display:block}
+  .frame.dark{background:#0E0E10}
+  .frame.dark .bar{background:#17171A;border-bottom-color:rgba(255,255,255,.06)}
+  .frame.dark .bar .u{color:rgba(255,255,255,.4)}
+  .figure figcaption{font-size:13px;color:var(--g5);margin-top:10px;text-align:center;line-height:1.5}
+  /* fallback when image not present yet */
+  .ph{display:none;padding:48px 22px;text-align:center;color:var(--g5);font-size:13px;line-height:1.6}
+  .frame.dark .ph{color:rgba(255,255,255,.5)}
+  .frame.empty img{display:none}
+  .frame.empty .ph{display:block}
+
+  /* ---- FAQ ---- */
+  .faq{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--g1)}
+  .faq details{border-bottom:1px solid var(--g1)}
+  .faq summary{
+    list-style:none;cursor:pointer;padding:18px 40px 18px 0;position:relative;
+    font-size:16px;font-weight:600;color:var(--black);line-height:1.4;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{
+    content:"";position:absolute;right:4px;top:22px;width:11px;height:11px;
+    border-right:2px solid var(--g5);border-bottom:2px solid var(--g5);
+    transform:rotate(45deg);transition:transform .3s var(--ease);
+  }
+  .faq details[open] summary::after{transform:rotate(-135deg);top:26px}
+  .faq .ans{padding:0 0 20px;font-size:15px;color:var(--g7);line-height:1.65}
+  .faq .ans p + p{margin-top:10px}
+  .faq .ans ul{margin:8px 0 0;padding-left:20px}
+  .faq .ans li{margin-bottom:5px}
+  .faq .ans strong{color:var(--black);font-weight:600}
+
+  /* ---- final CTA band ---- */
+  .band{background:var(--black);border-radius:24px;padding:40px 28px;text-align:center;color:#fff;overflow:hidden;position:relative}
+  .band h2{color:#fff;font-size:clamp(24px,4vw,34px);line-height:1.12;margin-bottom:10px}
+  .band h2 em{font-family:'DM Serif Display',Georgia,serif;font-style:italic;font-weight:400;color:var(--teal-lite)}
+  .band p{color:rgba(255,255,255,.7);font-size:15px;max-width:44ch;margin:0 auto 24px}
+  .band .btn{background:var(--cta)}
+  .band .btn:hover{background:var(--cta-h)}
+  .band .orb{position:absolute;width:300px;height:300px;border-radius:999px;background:rgba(45,212,191,.12);filter:blur(70px);top:-120px;right:-80px;pointer-events:none}
+
+  /* ---- footer ---- */
+  footer{padding:36px 0 48px;text-align:center}
+  footer .fbrand{font-size:13px;font-weight:600;color:var(--black)}
+  footer .fbrand span{color:var(--g5);font-weight:500}
+  footer .fmeta{font-size:12px;color:var(--g5);margin-top:8px;line-height:1.7}
+  footer a{color:var(--g7);font-weight:600}
+
+  .divider{height:1px;background:var(--g1);border:0;margin:0}
+
+  @media(prefers-reduced-motion:reduce){
+    html.smooth{scroll-behavior:auto}
+    [data-r]{opacity:1!important;transform:none!important;transition:none!important}
+    .btn,.pcard{transition:none}
+  }
+  </style>
+</head>
+<body>
+
+  <!-- sticky nav -->
+  <nav class="nav" id="nav">
+    <div class="brand">IA de Primeira <span>× Flora</span></div>
+    <a class="cta-mini" href="https://www.rodrigorosar.com.br/flora">Criar conta</a>
+  </nav>
+
+  <!-- hero -->
+  <header class="hero">
+    <div class="orb a"></div><div class="orb b"></div>
+    <div class="wrap">
+      <div class="lockup">
+        <span class="dot"></span>
+        <b>IA de Primeira</b> <span class="x">×</span> <b>Flora Fauna</b>
+      </div>
+      <h1>Flora com <em>25% de desconto.</em><br>Leia antes de criar sua conta.</h1>
+      <p class="sub">Fizemos uma parceria entre a nossa escola e o Flora. Siga o passo a passo abaixo com atenção e crie a sua <strong style="color:var(--black);font-weight:600">nova conta</strong> com 25% de desconto em todos os planos.</p>
+    </div>
+  </header>
+
+  <!-- aviso importante -->
+  <section class="sec" style="padding-top:28px">
+    <div class="wrap">
+      <div class="callout warn" data-r>
+        <div class="ctop">
+          <span class="ic" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+          </span>
+          <span class="ctitle">Leia isto primeiro</span>
+        </div>
+        <p>Se você <strong>já tem uma conta</strong> no Flora, vai precisar criar uma <strong>nova conta, com um novo email</strong>, para ter o desconto. Não funciona com emails já cadastrados.</p>
+        <p>Se você já tem um <strong>plano vigente</strong>, use o link quando ele vencer, que vai estar funcionando.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- passo a passo -->
+  <section class="sec" id="passos">
+    <div class="wrap">
+      <div class="shead" data-r>
+        <h2>O passo a passo</h2>
+        <p>São três passos. O desconto de parceiro aparece só no final, na hora do pagamento.</p>
+      </div>
+
+      <div class="steps">
+
+        <!-- passo 1 -->
+        <div class="step" data-r>
+          <div class="snum">1</div>
+          <div class="slabel">Criar a conta</div>
+          <h3>Crie a conta pelo nosso link</h3>
+          <p>Use o link de parceiro para criar a sua conta. É por ele que o desconto fica vinculado ao seu cadastro.</p>
+          <div style="margin-top:14px">
+            <a class="btn" href="https://www.rodrigorosar.com.br/flora">
+              Criar conta no Flora
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- passo 2 -->
+        <div class="step" data-r>
+          <div class="snum">2</div>
+          <div class="slabel">Escolha o plano</div>
+          <h3>Abra a página de planos</h3>
+          <p>Dentro do Flora, abra o menu de planos:</p>
+          <ol>
+            <li>Clique na <span class="gear"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg> engrenagem</span> no canto inferior esquerdo da tela.</li>
+            <li>Depois clique em <b style="color:var(--black)">Plans &amp; Pricing</b>.</li>
+          </ol>
+          <figure class="figure">
+            <div class="frame dark">
+              <div class="bar"><i></i><i></i><i></i><span class="u">Flora · Plans &amp; Pricing</span></div>
+              <img src="images/flora-planos.webp" alt="Tela Plans & Pricing do Flora com os planos Pro, Agency e Enterprise no modo anual (yearly)." loading="lazy" decoding="async" onerror="this.closest('.frame').classList.add('empty')">
+              <div class="ph">Coloque aqui: <b>images/flora-planos.png</b><br>(print da tela Plans &amp; Pricing)</div>
+            </div>
+            <figcaption>A página de planos mostra só a diferença mensal × anual. O desconto de parceiro aparece no próximo passo.</figcaption>
+          </figure>
+        </div>
+
+        <!-- passo 3 -->
+        <div class="step" data-r>
+          <div class="snum">3</div>
+          <div class="slabel">Vá para o checkout</div>
+          <h3>O desconto aparece no pagamento</h3>
+          <p>Escolha o plano e siga para o checkout. O desconto de parceiro de <strong style="color:var(--black);font-weight:600">25%</strong> só aparece nessa tela final, como no exemplo abaixo. Preencha seus dados e pronto.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- como funciona o desconto -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="shead" data-r>
+        <h2>Como o desconto funciona</h2>
+        <p>O desconto é aplicado na hora do plano escolhido. No plano <strong>anual</strong> ele vale o ano inteiro. No plano <strong>mensal</strong> vale só o primeiro mês, e depois volta ao valor normal.</p>
+      </div>
+
+      <div class="eq" data-r>
+        <div class="cell">
+          <div class="k">20%</div>
+          <div class="v">por ser anual<br>(yearly)</div>
+        </div>
+        <div class="op">+</div>
+        <div class="cell">
+          <div class="k">25%</div>
+          <div class="v">da parceria<br>IA de Primeira</div>
+        </div>
+        <div class="op">=</div>
+        <div class="cell big">
+          <div class="k">45%</div>
+          <div class="v">de desconto<br>acumulado no anual</div>
+        </div>
+      </div>
+
+      <p style="font-size:14px;color:var(--g5);margin-top:14px;line-height:1.6" data-r>
+        Por isso, se couber no seu momento financeiro, o plano anual costuma ser a melhor escolha: o desconto fica acumulado no ano inteiro.
+      </p>
+    </div>
+  </section>
+
+  <!-- exemplo de preços -->
+  <section class="sec" style="padding-top:0">
+    <div class="wrap">
+      <div class="shead" data-r>
+        <h2>Exemplo de preços</h2>
+        <p>Valores em dólar, no plano anual (yearly) já com o desconto. Qual escolher depende do seu volume de uso dos créditos.</p>
+      </div>
+
+      <div class="prices">
+        <div class="pcard" data-r>
+          <div class="save">-40%</div>
+          <div class="pname">Pro</div>
+          <div class="pfor">Editor completo, 40+ modelos de IA</div>
+          <div class="old">US$ 240 / ano</div>
+          <div class="new">US$ 144 <small>/ ano</small></div>
+          <span class="brl">≈ R$ 66 / mês</span>
+        </div>
+
+        <div class="pcard" data-r>
+          <div class="save">Best value</div>
+          <div class="pname">Agency</div>
+          <div class="pfor">Para quem produz em alto volume</div>
+          <div class="old">US$ 720 / ano</div>
+          <div class="new">US$ 423 <small>/ ano</small></div>
+          <span class="brl">≈ R$ 195 / mês</span>
+        </div>
+      </div>
+
+      <div class="callout warn" style="margin-top:20px" data-r>
+        <div class="ctop">
+          <span class="ic" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+          </span>
+          <span class="ctitle">O desconto não aparece na página de planos</span>
+        </div>
+        <p>Na página de planos você vê apenas a diferença entre o plano mensal e o anual. O desconto de parceiro de <strong>25%</strong> aparece só no <strong>checkout</strong>, na tela de pagamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- checkout mock -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="shead" data-r style="text-align:center">
+        <h2>É assim que aparece no checkout</h2>
+        <p style="margin:0 auto">Procure a linha do desconto de parceiro. É essa linha que confirma que deu tudo certo.</p>
+      </div>
+
+      <figure class="figure" data-r style="max-width:640px;margin-left:auto;margin-right:auto">
+        <div class="frame">
+          <div class="bar"><i></i><i></i><i></i><span class="u">Flora · Checkout (Stripe)</span></div>
+          <img src="images/flora-checkout.webp" alt="Checkout do Flora mostrando Subtotal US$ 60,00, linha Dub 25% off de menos US$ 15,00 e Total devido hoje US$ 45,00." loading="lazy" decoding="async" onerror="this.closest('.frame').classList.add('empty')">
+          <div class="ph">Coloque aqui: <b>images/flora-checkout.png</b><br>(print do checkout com a linha <b>Dub 25% off</b>)</div>
+        </div>
+        <figcaption>A linha <b style="color:var(--gr)">Dub 25% off</b> (− US$ 15,00) confirma que o desconto de parceiro entrou.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- FAQ -->
+  <section class="sec" id="duvidas">
+    <div class="wrap">
+      <div class="shead" data-r>
+        <h2>Dúvidas que podem aparecer</h2>
+      </div>
+
+      <div class="faq" data-r>
+        <details>
+          <summary>O desconto não apareceu. O que faço?</summary>
+          <div class="ans">
+            <p>Quase sempre é um destes dois motivos:</p>
+            <ul>
+              <li>Você não se inscreveu pelo link de parceiro.</li>
+              <li>Você usou um email que já era cadastrado no Flora.</li>
+            </ul>
+            <p><strong>Solução:</strong> refaça o passo a passo usando um email novo. Cogitamos pedir um cupom para adicionar no checkout, mas por questões internas do Flora não é possível. Então refaça a operação e, se o erro persistir, tente trocar de navegador.</p>
+            <p>Testamos aqui com vários emails e funcionou a partir de <strong>30/09/2025</strong>. Se você teve esse problema antes dessa data, refaça o cadastro.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Não sei se invisto direto no plano anual.</summary>
+          <div class="ans">
+            <p>Se quiser testar a ferramenta primeiro, assine um plano de <strong>1 mês</strong> com o link. Depois desse período, use <strong>outro email</strong> para assinar o anual, também pelo link.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>Já tenho conta no Flora. Consigo o desconto?</summary>
+          <div class="ans">
+            <p>Não na conta atual. O desconto só vale para uma <strong>conta nova, com email novo</strong>, criada pelo link de parceiro. Se você tem um plano vigente, use o link quando ele vencer.</p>
+          </div>
+        </details>
+
+        <details>
+          <summary>O desconto vale para qualquer plano?</summary>
+          <div class="ans">
+            <p>Sim, os 25% valem para todos os planos. No <strong>anual</strong> o desconto vale o ano inteiro; no <strong>mensal</strong>, vale só o primeiro mês e depois volta ao valor cheio.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- final CTA -->
+  <section class="sec" style="padding-top:8px">
+    <div class="wrap">
+      <div class="band" data-r>
+        <div class="orb"></div>
+        <h2>Pronto para começar <em>com desconto?</em></h2>
+        <p>Crie a sua nova conta pelo link de parceiro e siga o passo a passo acima.</p>
+        <a class="btn" href="https://www.rodrigorosar.com.br/flora">
+          Criar conta no Flora
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="fbrand">IA de Primeira <span>× Flora Fauna</span></div>
+      <div class="fmeta">
+        Guia de instalação com desconto de parceiro.<br>
+        Dúvidas? Fale com o suporte da IA de Primeira.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    // sticky nav after hero
+    var nav=document.getElementById('nav'),hero=document.querySelector('.hero');
+    if('IntersectionObserver' in window && hero){
+      new IntersectionObserver(function(e){
+        nav.classList.toggle('vis',!e[0].isIntersecting);
+      },{rootMargin:'-72px 0px 0px 0px'}).observe(hero);
+    }else{nav.classList.add('vis');}
+
+    // reveals
+    var rev=document.querySelectorAll('[data-r]');
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('is');io.unobserve(en.target);}});
+      },{rootMargin:'0px 0px -8% 0px',threshold:.08});
+      rev.forEach(function(el){io.observe(el);});
+    }else{rev.forEach(function(el){el.classList.add('is');});}
+    // failsafe: never leave content hidden (print, background tab, headless)
+    setTimeout(function(){rev.forEach(function(el){el.classList.add('is');});},2200);
+
+    // FAQ single-open
+    var ds=document.querySelectorAll('.faq details');
+    ds.forEach(function(d){
+      d.addEventListener('toggle',function(){
+        if(d.open){ds.forEach(function(o){if(o!==d)o.open=false;});}
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
